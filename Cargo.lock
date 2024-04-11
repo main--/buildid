@@ -24,7 +24,7 @@ dependencies = [
 
 [[package]]
 name = "buildid"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "buildid-linker-symbols",
  "env_logger",
@@ -39,16 +39,8 @@ dependencies = [
 [[package]]
 name = "buildid-linker-symbols"
 version = "1.0.1"
-
-[[package]]
-name = "buildid-tests-linker-symbols"
-version = "0.1.0"
-dependencies = [
- "buildid",
- "buildid-linker-symbols",
- "env_logger",
- "hex",
-]
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "07acee82a427dddede47d86811c60b79044ca763f3f33b5072eb354a8ceb82a1"
 
 [[package]]
 name = "cfg-if"

@@ -174,7 +174,7 @@ impl<'a> NoteIter<'a> {
         //
         // We'll also need to iterate over program segments to pick out the PT_NOTE one we need.
 
-        if phdr.p_type != libc::PT_NOTE {
+        if phdr.p_type != 4/*libc::PT_NOTE*/ {
             None
         } else {
             let segment_base = (info.dlpi_addr + phdr.p_vaddr) as *const u8;
@@ -227,7 +227,7 @@ pub fn build_id() -> Option<&'static [u8]> {
 
         for phdr in PhdrIter::from(info) {
             // FIXME: unclear why the first PT_LOAD is the right thing to use here
-            if phdr.p_type == libc::PT_LOAD {
+            if phdr.p_type == 1/*libc::PT_LOAD*/ {
                 map_start = Some(info.dlpi_addr + phdr.p_vaddr);
                 break;
             }
